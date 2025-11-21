@@ -48,7 +48,7 @@ export default function UsersPage({ users }: UsersPageProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
     
@@ -74,7 +74,6 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         users: formattedUsers,
       },
-      revalidate: 60,
     };
   } catch (error) {
     console.error('Error fetching users:', error);
