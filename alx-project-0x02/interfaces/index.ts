@@ -22,3 +22,17 @@ export interface ButtonProps {
   className?: string;
   type?: 'button' | 'submit' | 'reset';
 }
+
+export interface PostProps {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+}
+
+export interface ApiPost {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+}
