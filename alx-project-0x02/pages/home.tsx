@@ -1,5 +1,5 @@
 import Header from '../components/layout/Header';
-import Card from '../components/common/Card';
+import Card from '@/components/common/Card';  // Use absolute import
 
 export default function HomePage() {
   return (
