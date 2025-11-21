@@ -12,6 +12,9 @@ export default function Header() {
           </div>
           <div className="space-x-4">
             <Link href="/" className="hover:text-blue-200 transition-colors">
+              Index
+            </Link>
+            <Link href="/home" className="hover:text-blue-200 transition-colors">
               Home
             </Link>
             <Link href="/about" className="hover:text-blue-200 transition-colors">
