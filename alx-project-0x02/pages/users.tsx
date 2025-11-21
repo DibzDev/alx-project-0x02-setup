@@ -48,40 +48,24 @@ export default function UsersPage({ users }: UsersPageProps) {
   );
 }
 
-export const getStaticProps = async () => {
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch users');
-    }
-    
-    const users = await response.json();
-    
-    // Format the users data to match our interface
-    const formattedUsers = users.map((user: any) => ({
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      address: {
-        street: user.address.street,
-        city: user.address.city,
-        zipcode: user.address.zipcode,
-      },
-    }));
+export async function getStaticProps() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const users = await response.json();
+  
+  const formattedUsers = users.map((user: any) => ({
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    address: {
+      street: user.address.street,
+      city: user.address.city,
+      zipcode: user.address.zipcode,
+    },
+  }));
 
-    return {
-      props: {
-        users: formattedUsers,
-      },
-    };
-  } catch (error) {
-    console.error('Error fetching users:', error);
-    
-    return {
-      props: {
-        users: [],
-      },
-    };
-  }
-};
+  return {
+    props: {
+      users: formattedUsers,
+    },
+  };
+}
