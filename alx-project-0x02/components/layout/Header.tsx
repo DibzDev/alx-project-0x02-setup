@@ -30,6 +30,9 @@ export default function Header() {
             <Link href="/posts" className={isActive('/posts')}>
               Posts
             </Link>
+            <Link href="/users" className={isActive('/users')}>
+              Users
+            </Link>
           </div>
         </div>
       </nav>
