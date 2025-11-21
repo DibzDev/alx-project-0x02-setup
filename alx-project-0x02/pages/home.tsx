@@ -1,5 +1,5 @@
 import Header from '../components/layout/Header';
-import Card from '../components/common/card';
+import Card from '../components/common/Card.tsx';
 
 export default function HomePage() {
   return (
